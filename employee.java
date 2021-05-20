@@ -59,7 +59,7 @@ public class employee {
 		}
 		if(flag==0)
 		{
-			System.out.println("No such employee");
+			System.out.println("Not found");
 		}
 	}
 }
