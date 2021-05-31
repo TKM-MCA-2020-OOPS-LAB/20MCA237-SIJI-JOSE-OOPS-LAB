@@ -1,4 +1,4 @@
-package myproject;
+package myproject.co3;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,26 +19,25 @@ class  product1 implements calc
 }
 class product2 extends product1 implements calc
 {
-	int product_id=102,quantity=1,unit_pr=100,total;
-	String name="B";
+	int p_id=102,qnty=1,_pr=100,totl;
+	String nam="B";
 	DateFormat df=new SimpleDateFormat("dd/MM/yy");
 	Date d= new Date();
-	@Override
 	public void total()
 	{
 		super.total();
-		total=quantity*unit_pr;
+		totl=qnty*_pr;
 	}
 	public void display()
 	{
-		System.out.println("Order No.112\n");
+		System.out.println("Order No.56\n");
 		System.out.println("Date: "+df.format(d));
 		System.out.println("\nProduct Id\t\tName\t\t\tQuantity\t\t\tunit price\t\t\tTotal");
 		System.out.println("________________________________________________________________________________________________________________________________");
 		System.out.println(pid+"\t\t\t"+name+"\t\t\t"+qty+"\t\t\t\t"+pr+"\t\t\t\t"+total);
-		System.out.println(product_id+"\t\t\t"+name+"\t\t\t"+quantity+"\t\t\t\t"+unit_pr+"\t\t\t\t"+total);
+		System.out.println(p_id+"\t\t\t"+nam+"\t\t\t"+qnty+"\t\t\t\t"+_pr+"\t\t\t\t"+totl);
 		System.out.println("_________________________________________________________________________________________________________________________________");
-		System.out.println("\t\t\t\t\t\t\t\t\tNet. Amount"+"\t\t\t\t"+(total+total));
+		System.out.println("\t\t\t\t\t\t\t\t\tNet. Amount"+"\t\t\t\t"+(total+totl));
 		
 	}
 }
