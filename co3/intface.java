@@ -49,12 +49,11 @@ class Rectangle extends Circle
 }
 public class intface
 {
-    public static void main(String[] args)
-    {
-        Rectangle obj = new Rectangle();
-        obj.input();
-        obj.area();
-        obj.perimeter();
-    }
+public static void main(String[] args)
+{
+    Rectangle obj = new Rectangle();
+    obj.input();
+    obj.area();
+    obj.perimeter();
 }
-
+}
