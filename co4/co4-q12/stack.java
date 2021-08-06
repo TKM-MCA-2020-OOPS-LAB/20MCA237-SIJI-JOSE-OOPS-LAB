@@ -1,8 +1,4 @@
-// Java code to illustrate remove() when position of
-// element is passed as parameter
-
 import java.util.*;
-
 public class stack{
 	public static void main(String args[])
 	{
@@ -23,12 +19,10 @@ public class stack{
 		String rem = stack.remove(1);
 
 		// Print the removed element
-		System.out.println("Removed element: "
-						+ rem);
+		System.out.println("Removed element: "+ rem);
 
 		// Print the final Stack
-		System.out.println("Final Stack: "
-						+ stack);
+		System.out.println("Final Stack: "+ stack);
 	}
 }
 
