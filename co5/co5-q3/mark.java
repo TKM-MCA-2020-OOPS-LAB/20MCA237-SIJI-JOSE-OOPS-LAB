@@ -1,81 +1,104 @@
-
----smiley condition is not checked----
-
 import java.applet.*;
 import java.awt.*;
+import java.awt.Graphics; 
 import java.awt.event.*;
-public class mark extends Applet implements ActionListener{
-Button b1;
-TextField t1,t2,t3,t4,t5,t6;
-Label l1,l2,l3,l4,l5,l6;
-       public void init(){
-l1=new Label("Maths");
-l1.setBounds(100,40,100,20);
-t1=new TextField();
-t1.setBounds(210,40,100,20);
-
-l2=new Label("English");
-l2.setBounds(100,80,100,20);
-t2=new TextField();
-t2.setBounds(210,80,100,20);
-
-l3=new Label("Hindi");
-l3.setBounds(100,120,100,20);
-t3=new TextField();
-t3.setBounds(210,120,100,20);
-
-l4=new Label("Computer");
-l4.setBounds(100,160,100,20);
-t4=new TextField();
-t4.setBounds(210,160,100,20);
-
-l5=new Label("Science");
-l5.setBounds(100,200,100,20);
-t5=new TextField();
-t5.setBounds(210,200,100,20);
-
-l6=new Label("Result(%)");
-l6.setBounds(100,240,100,20);
-t6=new TextField();
-t6.setBounds(210,240,100,20);
 
 
-b1=new Button("FIND");
-b1.setBounds(210,280,60,50);
-add(l1);
-add(l2);
-add(l3);
-add(l4);
-add(l5);
-add(l6);
-add(t1);
-add(t2);
-add(t3);
-add(t4);
-add(t5);
-add(t6);
-add(b1);
+public class mark extends Applet implements ActionListener {
+	Label l1,l2,l3,l4,l5,l6;
+    TextField t1,t2,t3,t4,t5,t6;
+    Button b;
+    public void init(){
+    	l1 = new Label(" MATHS:"); 
+    	t1 = new TextField();  
+    	l2 = new Label(" PHYSICS :");  
+    	t2 = new TextField();  
+    	l3 = new Label(" BIOLOGY :");  
+    	t3 = new TextField();
+    	l4 = new Label("COMPUTER :");  
+    	t4 = new TextField(); 
+    	l5 = new Label("CHEMISTRY:");  
+    	t5 = new TextField(); 
+    	l6 = new Label("PERCENTAGE:");  
+    	t6 = new TextField(); 
+       
+    
+    	b = new Button("RESULT");  
 
-b1.addActionListener(this);
+    	setLayout(null);
 
-setLayout(null);
-   }
-public void actionPerformed(ActionEvent ev){
-int a=Integer.parseInt(t1.getText());
-int b=Integer.parseInt(t2.getText());
-int c=Integer.parseInt(t3.getText());
-int d=Integer.parseInt(t4.getText());
-int e=Integer.parseInt(t5.getText());
+    	l1.setBounds(450,50,70,20);
+        t1.setBounds(520,50,100,20);
+        l2.setBounds(450,80,70,20);
+        t2.setBounds(520,80,100,20);
+        l3.setBounds(450,110,70,20);
+        t3.setBounds(520,110,100,20);
+    	l4.setBounds(450,140,70,20);
+    	t4.setBounds(520,140,100,20);
+    	l5.setBounds(450,170,70,20);
+    	t5.setBounds(520,170,100,20);
+    	l6.setBounds(450,200,100,20);
+    	t6.setBounds(550,200,100,20);
 
-      if(ev.getSource()==b1){
-      int sum=(a+b+c+d+e)/5;
-      t6.setText(""+sum);
-      }
+    	b.setBounds(450,290,80,30);
+                  
+        add(l1);
+        add(l2);
+        add(l3);
+        add(l4);
+    	add(l5);
+    	add(l6);
+        add(t1);
+        add(t2);
+        add(t3);
+        add(t4);
+        add(t5);
+        add(t6);
+        add(b);        
+        b.addActionListener(this);   
 
+    }
+    public void actionPerformed(ActionEvent e){
+    	float m1, m2,m3, m4,m5,percent;
+       
+        m1= Float.parseFloat(t1.getText());
+        m2= Float.parseFloat(t2.getText());
+        m3= Float.parseFloat(t3.getText());
+        m4= Float.parseFloat(t4.getText());
+        m5= Float.parseFloat(t5.getText());
+        
+        percent=((m1+m2+m3+m4+m5)*100)/500;
+        
+        t6.setText(String.valueOf(percent));
+        repaint();
+    }
+    public void paint(Graphics g){
+       
+        float p;
+        p= Float.parseFloat(t6.getText());
+        
+        if(p> 50.0) {
+        	g.setColor(Color.YELLOW);
+        	g.fillOval(0,0,300,300);
+        	g.setColor(Color.BLACK);
+        	g.fillOval(80,75,30,30);
+        	g.fillOval(190,75,30,30);
+        	g.setColor(Color.black);
+        	g.fillArc (75,100,150,150,0,-180);
+        }
+        else {
+        	g.setColor(Color.YELLOW);
+            g.fillOval(0,0,300,300);
+            g.setColor(Color.BLACK );
+            g.fillOval(80,75,30,30);
+            g.fillOval(190,75,30,30);
+            g.setColor(Color.black);
+            g.drawArc(75,150,150,150,0,180);
+
+        }
+    }
 }
-
-}
-/*
-<applet code="mark.class" width="500" height="300">
-</applet>
-*/
+/* 
+<applet code="mark.class" border="2" width="500" height="500"> 
+</applet> 
+*/ 
